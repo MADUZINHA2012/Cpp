@@ -1,0 +1,37 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //exercicio 20 da lista //
+    vector <int> A (142);
+    int aux1 = 4, aux2 = 9;
+    
+    for (int i = 0; i < 142; i++)
+    {
+        if (i % 2 == 0)
+        {
+            aux1 = aux1 + 1;
+            A[i] = aux1;
+        }
+        else
+        {
+            if (i % 2 != 0)
+            {
+            aux2 += 1;  
+            A[i] = aux2;
+            
+            }
+        }
+        
+        cout << A[i]<< endl;
+    }
+    
+    return 0;
+}
+
+Enunciado do exercício: Elabore um programa C/C++ que imprima os termos da série abaixo. Parar o processamento
+quando for impresso um termo maior que 80.
+Série: 5, 10, 6, 11, 7, 12, 8, 13, . . .
