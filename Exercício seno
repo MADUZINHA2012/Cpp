@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int fatorial(int n) {
+    int resultado = 1;
+    for (int i = 2; i <= n; ++i) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+    float seno(int nt, int y)
+    {
+        int sinal = 1; 
+        float sen = 0;
+        for (int i = 1; i <= (nt*2); i++)
+        {
+            if(i % 2 != 0)
+            {
+                sen += sinal * pow(y, i) / fatorial(i);
+                sinal *= -1;  
+                
+            }
+            
+        }
+       return sen; 
+    }
+
+int main() {
+    int n = 0, nt = 0, y = 0;
+    float sen;
+    
+    cout << "Digite um número inteiro: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "Fatorial não é definido para números negativos." << endl;
+    } else {
+        cout << "Fatorial de " << n << " é " << fatorial(n) << endl;
+    }
+    
+    cout << "Declare o valor do angulo em radiano: ";
+    cin >> y;
+    
+    cout << "Declare a precisao que vc deseja ter no calculo do seno: ";
+    cin >> nt;
+    
+    seno(nt, y);
+    
+
+    return 0;
+}
