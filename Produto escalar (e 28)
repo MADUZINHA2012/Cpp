@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float produtoEscalar = 0.0;
+    vector <double> A(50);
+    vector <double> B(50);
+    
+    cout << "O presente programa calcula o produto escalar entre dois vetores." << endl;
+    for (int i = 0; i < 50; i++)
+    {
+        cout << "Declare o valor de p"<< i <<" do primeiro vetor: ";
+        cin >> A[i];
+        cout << "Declare o valor de p"<< i <<" do segundo vetor: ";
+        cin >> B[i];
+    }
+    
+    for (int i = 0; i < 50; i++)
+    {
+     produtoEscalar += A[i] * B[i];
+    }
+    
+    cout << "O produto escalar entre os vetores corresponde a: " << produtoEscalar;
+    
+    return 0;
+}
+28) Elabore um programa C/C++ que calcule o produto escalar de dois vetores, V1 e V2, de
+números reais, de 50 posições cada um.
