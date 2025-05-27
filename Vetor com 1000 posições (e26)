@@ -1,19 +1,31 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 using namespace std;
 
 int main()
 {
-    vector <double> V(1000);
-    
-    for (int i = 0; i < 1000; i++ )
+    vector<double> V(1000);
+
+    // Preenchendo o vetor
+    for (int i = 0; i < 1000; i++)
     {
-        V[i] = i - 7;  
-        
+        V[i] = i - 7;  // valores de -7 até 992
     }
-    
-    cout << V[0] << "  " << V[999];
+
+    double menor = V[0];
+    double maior = V[0];
+
+    // Encontrando menor e maior
+    for (int i = 1; i < 1000; i++)
+    {
+        if (V[i] < menor)
+            menor = V[i];
+        if (V[i] > maior)
+            maior = V[i];
+    }
+
+    cout << "Menor elemento: " << menor << endl;
+    cout << "Maior elemento: " << maior << endl;
 
     return 0;
 }
