@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    vector <double> V(1000);
+    
+    for (int i = 0; i < 1000; i++ )
+    {
+        V[i] = i - 7;  
+        
+    }
+    
+    cout << V[0] << "  " << V[999];
+
+    return 0;
+}
+
+Exercício 26: Elabore um programa C/C++ que retorne o maior e o menor elemento de um vetor V, de
+números reais, com 1000 posições.
