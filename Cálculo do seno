@@ -10,27 +10,22 @@ int fatorial(int n) {
     return resultado;
 }
 
-    float seno(int nt, int y)
-    {
-        int sinal = 1; 
-        float sen = 0;
-        for (int i = 1; i <= (nt*2); i++)
-        {
-            if(i % 2 != 0)
-            {
-                sen += sinal * pow(y, i) / fatorial(i);
-                sinal *= -1;  
-                
-            }
-            
+float seno(int nt, float y_rad) {
+    int sinal = 1;
+    float sen = 0;
+    for (int i = 1; i <= (nt * 2); i++) {
+        if (i % 2 != 0) {
+            sen += sinal * pow(y_rad, i) / fatorial(i);
+            sinal *= -1;
         }
-       return sen; 
     }
+    return sen;
+}
 
 int main() {
-    int n = 0, nt = 0, y = 0;
-    float sen;
-    
+    int n = 0, nt = 0;
+    float y = 0, y_rad = 0, sen;
+
     cout << "Digite um número inteiro: ";
     cin >> n;
 
@@ -39,15 +34,17 @@ int main() {
     } else {
         cout << "Fatorial de " << n << " é " << fatorial(n) << endl;
     }
-    
-    cout << "Declare o valor do angulo em radiano: ";
+
+    cout << "Declare o valor do ângulo em graus: ";
     cin >> y;
-    
-    cout << "Declare a precisao que vc deseja ter no calculo do seno: ";
+
+    cout << "Declare a precisão que você deseja ter no cálculo do seno: ";
     cin >> nt;
-    
-    seno(nt, y);
-    
+
+    y_rad = y * M_PI / 180.0;
+    sen = seno(nt, y_rad);
+
+    cout << "Seno de " << y << " graus é aproximadamente: " << sen << endl;
 
     return 0;
 }
