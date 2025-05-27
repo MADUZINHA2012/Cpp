@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float media = 0.0;
+    vector <double> V(100);
+    
+    cout << "Digite a nota do primeiro aluno: ";
+    cin >> V[0];
+    
+    for (int i = 1; i < 100; i++)
+    {
+     cout << "Digite a nota do proximo aluno: ";
+     cin >> V[i];
+    }
+    
+    for (int i = 0; i < 100; i++)
+    {
+        media += V[i];
+    }
+    
+    media = media / 100;
+    
+    cout << "A media da classe foi: "<< media;
+    
+    return 0;
+}
+
+25) Supondo que um vetor V, de números reais, contenha as notas dos alunos de uma classe,
+elabore um programa C/C++ que calcule a média aritmética dos elementos de V (Obs.: o vetor
+V tem 100 posições).
