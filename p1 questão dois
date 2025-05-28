@@ -8,6 +8,7 @@ int main()
     int n = 0;
     vector <vector <int>> E(50, vector<int> (5));
     vector <float> Medias(50);
+    vector <int> V(50);
     float soma, min = 0.0;
     
     //a
@@ -61,10 +62,30 @@ int main()
     }
     
     //d
-    for ()
-    
-    
-    
-    
+    for (int i = 0; i < 50; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            soma += E[i][j];
+            if ( j == 4)
+            {
+                V[i] = soma;
+            }
+        }
+       int soma = 0, maior = 0;
+        if (V[i] > maior)
+        {
+            maior = V[i];
+        }
 
+        if(maior > V[i])
+        {
+            
+            for (int  j = 0; j < 5; j++)
+            {
+                cout << "A empresa com maior quantidade de produtos disponiveis eh a empresa "<< i << " com "<< E[i][j]<< " produzidos.";   
+            }
+        }
+    }
     return 0;
+}
