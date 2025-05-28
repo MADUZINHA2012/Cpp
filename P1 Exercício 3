@@ -1,0 +1,74 @@
+#include <cmath>
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main()
+{
+    float soma = 0.0, contaMaior = 0.0, contaMenor = 0.0, PMaior = 0.0, PMenor = 0.0, Sal = 0.0;
+   vector<string> N(22);
+   vector<string> C(22);
+   vector<int> G(22);
+   vector<int> S(22);
+   //a
+   for (int i = 0; i < 22; i++)
+   {
+       cout << "Declare o nome do jogador: ";
+       cin >> N[i];
+       cout << "Declare o cpf do jogador " << N[i];
+       cin >> C[i];
+       cout << "Declare a quantidade de gols feita por " << N[i];
+       cin >> G[i];
+       cout << "Declare o salario: ";
+       cin >> S[i];
+   }
+    //b
+    for (int i = 0; i < 22; i++)
+   {
+      soma += S[i];
+   }
+    
+    soma = soma / 22;
+    cout << "A media salarial dos jogadores eh igual a: "<< soma;
+    
+    cout << "Os jogadores com salario acima da media sao :";
+
+    for (int i = 0; i < 22; i++)
+   {
+       if (soma < S[i])
+       cout << N[i] << " , " << C[i]<<" , "<< G[i] << ", "<< S[i]<< endl;
+   }
+   //c
+   for (int i = 0; i < 22; i++)
+   {
+       if (soma / 0.9 < S[i])
+       cout << N[i] << " , " << C[i]<<" , "<< G[i] << ", "<< S[i]<< endl;
+   }
+       
+    cout << "Determine um salario: ";
+    cin >> Sal;
+    for (int i = 0; i < 22; i++)
+    {
+        if(Sal < S[i])
+        {
+            contaMaior++;
+        }
+        else 
+        {
+            if(Sal > S[i])
+            {
+                contaMenor++;
+            }
+        }
+    }
+    
+    PMaior = (contaMaior / 22 ) * 100;
+    PMenor = (contaMenor / 22 )* 100; 
+    cout << "O percentual de jogadores com salario acima da media nesse time corresponde a: "<< PMaior << endl;
+    cout << "O percentual de jogadores com salario abaixo da media nesse time corresponde a: "<< PMenor;
+       
+       
+    
+    return 0;
+}
