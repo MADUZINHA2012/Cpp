@@ -1,0 +1,73 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+    bool ehPrimo(int num) 
+    {
+        if (num <= 1) return false;
+        for (int i = 2; i * i <= num; i++) 
+        {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+int main()
+{
+    vector <int> V;
+    int x, a = 0, b = 1, c = 1, seq = 0, proximo ;
+    
+    V.push_back(0);
+    V.push_back(1);
+    V.push_back(1);
+
+    // a
+    cout << "Declare a posicao que se deseja calcular: ";
+    cin >> x;
+
+    // V = {0, 1, 1}
+
+    for (int i = 0; i < x; i++) 
+    {
+        seq = a + b + c;
+        a = b;
+        b = c;
+        c = seq;     // proximo é usado aqui, antes de receber valor
+        V.push_back(seq);
+    }
+
+     cout << V[x - 1] << endl;
+     
+     // b
+     for (int i = 0; i < x; i++)
+   {
+       if (V[i] % 3 == 0)
+       {
+           cout <<"Os multiplos de 3 ate a posicao "<< x << " sao: " << V[i] << endl;
+       }
+   }
+   
+   //c
+   int n = 0;
+   cout << endl << "Declare outra posicao: ";
+   cin >> n;
+   for (int i = 0; i * i < n; i++)
+    {
+        seq = a + b + c;
+        a = b;
+        b = c;
+        c = seq;
+         
+        V.push_back(seq);
+        
+        
+        if (ehPrimo(seq)) 
+        {
+            int posicao = V.size() - 1;
+            cout << "Número primo: " << seq << " na posição " << posicao << endl;
+        }
+    }
+    
+    return 0;
+}
