@@ -1,0 +1,70 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    vector <vector <int>> E(50, vector<int> (5));
+    vector <float> Medias(50);
+    float soma, min = 0.0;
+    
+    //a
+    for (int i = 0; i < 50; i++ )
+    {
+        
+        for (int j = 0; j < 5; j++)
+        {
+            cout <<"Empresa "<<(i+1) << "  - ";
+            cout << "Declare a quantidade do produto "<< (j + 1)<< " : ";
+            cin >> n;
+            E[i][j] = n;
+        }
+    }
+   
+     for (int i = 0; i < 50; i++ )
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            cout << E[i][j] << "  ";
+        }
+    }
+    //b
+    
+    for (int i = 0; i < 50; i++ )
+    {
+        soma = 0;
+        for (int j = 0; j < 5; j++)
+        {
+            soma += E[i][j];
+        }
+        Medias[i] = soma / 5;
+    }
+    
+    //c
+    
+    cout << "Declare a media minima considerada: ";
+    cin >> min;
+    
+    for (int i = 0; i < 50; i++)
+    {
+        if (Medias[i] > min)
+        {
+            cout << "As empresas que estao acima da media sao: " << Medias[i] << "  ";
+            for (int j = 0; j < 5; j++)
+                {
+                    cout << "A producao da empresa " << (i + 1)<< " corresponde a: "  <<"p "<< (j + 1) << E[i][j]<< "  ";
+                }
+        }
+        cout << endl;
+    }
+    
+    //d
+    for ()
+    
+    
+    
+    
+
+    return 0;
