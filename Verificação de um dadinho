@@ -1,0 +1,85 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+	vector<string> V;
+	int  cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, cont6 = 0;
+	int n = 0;
+    string posicao;
+	cout << "Quantas vezes vc jogou o dado? ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		cout << endl << "Em qual posicao caiu na " << i << " jogada? ";
+		cin >> posicao;
+		V.push_back(posicao);
+	}
+
+    for (int i = 0; i < n; i++)
+    {
+        if(V[i] == "p1")
+        cont1++;
+        else 
+        {
+            if(V[i] == "p2")
+            cont2++;
+            
+            else
+            {
+                if(V[i] == "p3")
+                cont3++;
+                
+                else
+                {
+                    if(V[i] == "p4")
+                    cont4++;
+                    
+                    else
+                    {
+                        if(V[i] == "p5")
+                        cont5++;
+                        
+                        else
+                        {
+                            if(V[i] == "p6")
+                            cont6++;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+	cout  << endl << "o dado caiu na posicao (1) " << cont1 << " vezes" << endl << endl;
+	cout  << endl << "o dado caiu na posicao (2) " << cont2 << " vezes" << endl << endl;
+	cout  << endl << "o dado caiu na posicao (3) " << cont3 << " vezes" << endl << endl;
+	cout  << endl << "o dado caiu na posicao (4) " << cont4 << " vezes" << endl << endl;
+	cout  << endl << "o dado caiu na posicao (5) " << cont5 << " vezes" << endl << endl;
+	cout  << endl << "o dado caiu na posicao (6) " << cont6 << " vezes" << endl << endl;	
+
+
+	return 0;
+}
+
+24) Tentando descobrir se um dado era viciado, um dono de cassino honesto o lançou N vezes, e
+armazenou os valores em um vetor V de N posições. Faça um programa C/C++ para
+determinar o número de ocorrências de cada face.
+
+Chat sugeriu for (int i = 0; i < n; i++)
+{
+    if (V[i] == "p1") cont1++;
+    else if (V[i] == "p2") cont2++;
+    else if (V[i] == "p3") cont3++;
+    else if (V[i] == "p4") cont4++;
+    else if (V[i] == "p5") cont5++;
+    else if (V[i] == "p6") cont6++;
+}
+
+
+
+
