@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+	vector<vector<int>> A ( 100, vector <int> (50));
+	int contZero = 0, contPositivo = 0, contNegativo = 0;
+	
+	for(int i = 0; i < 100; i++)
+	{
+	    for(int j = 0; j < 50; j++)
+	    {
+	        cout << endl << "Digite um numero inteiro para ocupar a posicao ("<< i << "," << j << ") da matriz: ";
+	        cin >> A[i][j];
+	        
+	        if (A[i][j] == 0) contZero++;
+	        else if (A[i][j] > 0) contPositivo++;
+	        else if (A[i][j] < 0) contNegativo++;
+	    }
+	}
+	
+	if (contZero == 1) 	
+	cout << "A matriz declarada tem o total de " << contZero << " elemento nulo" << endl;
+	else if (contZero > 1) 	cout << "A matriz declarada tem o total de " << contZero << " elementos nulos.\n";
+	
+	if (contNegativo == 1) cout << "A matriz declarada tem o total de " << contNegativo << " numero negativo. \n";
+	else if (contNegativo > 1) cout << "A matriz declarada tem o total de " << contNegativo << " numeros negativos.\n";
+	
+	if (contPositivo == 1) cout << "A matriz declarada tem o total de " << contPositivo << " numero positivo.\n";
+	else if (contPositivo > 1) cout << "A matriz declarada tem o total de " << contPositivo << " numeros positivos.\n";
+	
+	
+	return 0;
+}
+
+30) Faça um programa C/C++ que dada uma matriz M, (100x50), de números inteiros, retorne a
+quantidade de elementos negativos, nulos e positivos.
