@@ -27,7 +27,7 @@ int main (){
             C = M[i];
         }
         
-        if ((i >= 24 ) and (i > 34));
+        if ((i >= 24 ) and (i > 34))
         {
             M[i] = C * pow ( (1 + 0.013) , 3);
             C = M[i];
