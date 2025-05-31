@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main()
+{
+    double M = 0;
+    float c = 0, i = 0, t = 0;
+    string resposta1, resposta2;
+    cout << "Este programa eh capaz de realizar o calculo do juros simples e composto em taxa mensais.";
+
+    
+    cout << endl << "Qual tipo de juros vc deseja calcular? [simples/composto] ";
+    cin >> resposta1;
+    if (resposta1 == "simples")
+    {
+        while ((resposta2 != "nao") && (resposta2 != "parar"))
+        {
+            cout << "Qual o capital inicial? ";
+            cin >> c;
+            cout<< "Durante quantos meses voce pretende investir? ";
+            cin >> t;
+            cout << "Qual a taxa do banco? ";
+            cin >> i;
+            M = c * i * t;
+            cout << endl << "Voce tera o total de R$ " << M << " se investir nesse banco.";
+            cout << endl << "Voce deseja continuar esse programa? [digite nao ou parar, a fim de encerrar o calculo] ";
+            cin >> resposta2;
+            
+        }
+    }
+
+    else 
+    {
+        if (resposta1 == "composto")
+        {
+            while ((resposta2 != "nao" ) && (resposta2 != "parar"))
+             {
+                cout <<"Qual o capital inicial? ";
+                cin >> c;
+                cout << "Durante quantos meses voce pretende investir? ";
+                cin >> t;
+                cout << "Qual a taxa do banco em porcentagem? ";
+                cin >> i;
+                M = c * pow((1 + (i/100)), t);
+                cout << endl << "Voce tera o total de R$ " << M << " se investir nesse banco.";
+                cout << endl << "Voce deseja continuar esse programa? [digite nao ou parar, a fim de encerrar o calculo] ";
+                cin >> resposta2;
+            }
+        }   
+    }
+    return 0;
+}
