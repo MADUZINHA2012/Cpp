@@ -5,7 +5,7 @@ using namespace std;
 
 int main (){
 
-    vector<float> M(240);
+    vector<double> M(240);
     float C = 5000;
 
     for (int i = 0; i < 240; i++)
