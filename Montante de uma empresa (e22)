@@ -32,7 +32,6 @@ int main (){
             M[i] = C * pow ( (1 + 0.013) , 3);
             C = M[i];
         }
-        
     }
 
     for (int i = 0; i < 240; i++ )
@@ -42,3 +41,11 @@ int main (){
     
     return 0;
 }
+
+22) Uma quantia de US$5.000,00 foi depositada em um banco em Washington que paga 1,3% de
+juros ao mês. O dinheiro fica no banco durante 20 anos. Elabore um programa C/C++ que
+imprima o montante:
+a) a cada 3 meses, para os 3 primeiros anos;
+b) a cada 4 meses, para os 7 anos seguintes;
+c) a cada 2 meses, para os 4 anos seguintes;
+d) a cada 3 meses, para os 6 últimos anos.
