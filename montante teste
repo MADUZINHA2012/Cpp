@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+using namespace std;
+
+int main (){
+
+    vector<float> M(240);
+    float C = 5000;
+
+    for (int i = 0; i < 240; i++)
+    {
+        if( i < 3)
+        {
+            M[i] = C * pow ( (1 + 0.013), 3);
+            C = M[i];
+        }
+        
+        if ((i>= 3) and (i < 21 ))
+        {
+            M[i] = C * pow ((1 + 0.013), 4);
+            C = M[i];
+        }
+        if ((i >= 21) and (i < 24))
+        {
+            M[i] = C * pow ((1 + 0.013), 2);
+            C = M[i];
+        }
+        
+        if ((i >= 24 ) and (i > 34));
+        {
+            M[i] = C * pow ( (1 + 0.013) , 3);
+            C = M[i];
+        }
+        
+    }
+
+    for (int i = 0; i < 240; i++ )
+    {
+        cout << endl << M[i] << endl;
+    }
+    
+    return 0;
+}
