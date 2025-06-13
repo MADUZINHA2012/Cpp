@@ -1,0 +1,40 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+float fat(int n)
+{
+    float resultado = 1; 
+    for (int i = 1; i <= n; i++)
+    {
+        resultado *= i;
+    }
+
+    return resultado;
+}
+
+float funcao(float x, float n)
+{
+    float e = 0;
+    for (int i = 0; i <= n; i++)
+    {
+        e += pow(x, i) / fat(i);
+    }
+
+    return e;
+}
+
+int main()
+{
+    int x, n;
+
+    cout << "Declare ate que numero de termos vc deseja calcular: \n";
+    cin >> n;
+
+    cout << "Declare qual numero vc deseja elevar a base e: ";
+    cin >> x;
+
+    cout << "O resultado em questao eh: " << funcao(x, n) << endl;
+
+    return 0;
+}
