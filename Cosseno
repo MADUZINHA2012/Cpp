@@ -10,7 +10,6 @@ using namespace std;
     {
         fat *= i;
     }
-    
     return fat;
  }
 double FuncaoCos(double x, int n)
@@ -35,9 +34,9 @@ int main()
    
    cout << "Declare o valor da variavel da funcao: ";
    cin >> a;
-   
    double resultado = FuncaoCos(a, numb);
    cout << "O resultado da sua operacao eh: "<< resultado;
    
 
     return 0;
+}
