@@ -1,0 +1,47 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+ float fatorial(int n)
+ { 
+    int fat = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        fat *= i;
+    }
+    if (n == 0)
+    fat = 1;
+    
+    return fat;
+ }
+float FuncaoCos(int x, int n)
+{
+    float Coss;
+    int sinal = 1;
+    for (int i = 0; i <= n; i++)
+    {
+        Coss += ((pow (x, 2*i) / fatorial(2*i))* sinal);
+        sinal *= -1;
+    }
+    
+    return Coss;
+}    
+
+int main()
+{
+   int numb = 0, a = 0;
+   
+   cout << "Declare o numero de termos: ";
+   cin >> numb;
+   
+   cout << "Declare o valor da variavel da funcao: ";
+   cin >> a;
+   
+   fatorial(numb);
+   float resultado = FuncaoCos(a, numb);
+   cout << "O resultado da sua operacao eh: "<< FuncaoCos(a, numb);
+   
+
+    return 0;
+}
