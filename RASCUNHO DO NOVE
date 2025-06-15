@@ -3,23 +3,12 @@
 #include <iostream>
 using namespace std;
 
-// ler o coeficiente
-// pedir o grau do coeficiente
-// calcular a função
-
-int LerCoeficiente (int a)
+int GrauPolinomio()
 {
-    
-    cout << "Digite o valor do coeficiente: ";
-    cin >> a;
-    return a;
-}
-
-int GrauPolinomio(int n)
-{
+    int n;
     cout << "Declare o grau do polinomio que seja menor ou igual a vinte: ";
     cin >> n;
-    if(n > 20) 
+    if(n > 20 || n < 0) 
     {
         cout << "Valor inadequado, digite outro numero: ";
         cin >> n;
@@ -27,18 +16,25 @@ int GrauPolinomio(int n)
     
     return n;
 }
-
-double FuncaoPolinomial(int a, int n, int x)
+void LerCoeficiente (vector<int> &A, int n)
 {
-    LerCoeficiente(a);
-    GrauPolinomio(n);
-    
+    for (int i = 0; i <= n; i++)
+    {
+        cout << "Digite o valor do coeficiente a"<< i << ": ";
+        cin >> A[i];
+    }
+   
+}
+
+double FuncaoPolinomial(vector<int>& A, int n, int x)
+{
     cout << "Declare o valor de x: ";
     cin >> x;
-    double p;    
+    double p = 0;   
+    
     for(int i = 0; i <= n; i++)
     {
-        p += a * pow(x, i);
+        p += A[i] * pow(x, i);
     }
     cout << "P(" << x << ") = "<< p << endl;
     
@@ -47,11 +43,15 @@ double FuncaoPolinomial(int a, int n, int x)
 
 int main()
 {
-    int a = 0, n = 0, x = 0;
+    int grau = 0, x = 0;
+    grau = GrauPolinomio();
+    vector<int> coef(grau + 1);
+    LerCoeficiente(coef, grau);
+    
     
     for (int i = 0; i <= 10; i++)
     {
-        FuncaoPolinomial(a, n, x);
+        FuncaoPolinomial(coef, grau, x);
     }
     
     return 0;
