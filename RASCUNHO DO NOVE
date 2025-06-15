@@ -1,0 +1,58 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+// ler o coeficiente
+// pedir o grau do coeficiente
+// calcular a função
+
+int LerCoeficiente (int a)
+{
+    
+    cout << "Digite o valor do coeficiente: ";
+    cin >> a;
+    return a;
+}
+
+int GrauPolinomio(int n)
+{
+    cout << "Declare o grau do polinomio que seja menor ou igual a vinte: ";
+    cin >> n;
+    if(n > 20) 
+    {
+        cout << "Valor inadequado, digite outro numero: ";
+        cin >> n;
+    }
+    
+    return n;
+}
+
+double FuncaoPolinomial(int a, int n, int x)
+{
+    LerCoeficiente(a);
+    GrauPolinomio(n);
+    
+    cout << "Declare o valor de x: ";
+    cin >> x;
+    double p;    
+    for(int i = 0; i <= n; i++)
+    {
+        p += a * pow(x, i);
+    }
+    cout << "P(" << x << ") = "<< p << endl;
+    
+    return p;
+}
+
+int main()
+{
+    int a = 0, n = 0, x = 0;
+    
+    for (int i = 0; i <= 10; i++)
+    {
+        FuncaoPolinomial(a, n, x);
+    }
+    
+    return 0;
+}
