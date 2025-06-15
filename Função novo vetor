@@ -1,0 +1,48 @@
+#include  <vector>
+#include <cmath>
+#include <iostream>
+#include <string>
+using namespace std;
+
+vector<float> VetorC()
+{
+    vector <float> A, B;
+    int n1 = 0, n2 = 0;
+    float e = 0;
+    cout << "Declare o tamanho do primeiro vetor (A): ";
+    cin >> n1;
+    cout << "Declare o tamanho do segundo vetor (B): ";
+    cin >> n2;
+    
+    for(int i = 0; i < n1; i++)
+    {
+        cout << "A"<< i<< ": ";
+        cin >> e;
+        A.push_back(e);
+    }
+    
+    for(int i = 0; i < n2; i++)
+    {
+        cout << "B" << i<< ": ";
+        cin >> e;
+        B.push_back(e);
+    }
+    
+    vector<float> C;
+    C.insert(C.end(), A.begin(), A.end());
+    C.insert(C.end(), B.begin(), B.end());
+
+    return C;
+}
+
+int main()
+{
+     vector<float> resultado = VetorC();
+
+    cout << "\nVetor C (concatenado):\n";
+    for (int i = 0; i < resultado.size(); i++) {
+        cout << "C[" << i << "] = " << resultado[i] << endl;
+    }
+    
+    return 0;
+}
