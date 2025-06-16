@@ -1,0 +1,47 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std;
+void vetorOrdenado(vector<float> &M)
+{
+    
+    for (int i = 0; i < 99; i++)
+    {
+        M.push_back(i);
+    }
+}
+
+
+int main()
+{
+     vector<float> K;
+    vetorOrdenado(K);
+
+    float novoValor;
+    cout << "\nDigite um valor para inserir no vetor mantendo a ordem: ";
+    cin >> novoValor;
+
+    // Encontrar a posição correta para inserção
+    int pos = K.size(); // por padrão, no final
+    for (int i = 0; i < K.size(); i++)
+    {
+        if (novoValor < K[i])
+        {
+            pos = i;
+            break;
+        }
+    }
+
+    // Inserir o novo valor na posição correta
+    K.insert(K.begin() + pos, novoValor);
+
+    // Mostrar o vetor após inserção
+    cout << "\nVetor depois da inserção ordenada:\n";
+    for (int i = 0; i < K.size(); i++)
+    {
+        cout << K[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
