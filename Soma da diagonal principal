@@ -1,0 +1,42 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int SomaTrianguloInferior (int n)
+{
+    
+    cout << "Declare o grau da sua matriz: ";
+    cin >> n;
+    vector<vector<int>> A (n, vector<int>(n) );
+    
+    for(int i = 0; i < n; i++)
+    {
+        
+        for (int j = 0; j < n; j++)
+        {
+            cout << "Entre com o valor de a("<< i <<"),("<<j<< "): ";
+            cin >> A[i][j];    
+        }
+        
+    }
+    int soma = 0;
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(i == j)
+            soma += A[i][j];
+        }
+    }
+    return soma;
+}
+
+int main()
+{
+    int n = 0;
+    int resultado = SomaTrianguloInferior(n);
+    cout << resultado << endl;
+    
+    return 0;
+}
