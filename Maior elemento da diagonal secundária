@@ -1,0 +1,44 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int MaiorSecundaio (int n)
+{
+    
+    cout << "Declare o grau da sua matriz: ";
+    cin >> n;
+    vector<vector<int>> A (n, vector<int>(n) );
+    
+    for(int i = 0; i < n; i++)
+    {
+        
+        for (int j = 0; j < n; j++)
+        {
+            cout << "Entre com o valor de a("<< i <<"),("<<j<< "): ";
+            cin >> A[i][j];    
+        }
+        
+    }
+    int maior = 0;
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(i + j == n - 1)
+            {
+                if(maior < A[i][j]) maior = A[i][j];
+            } 
+        }
+    }
+    return maior;
+}
+
+int main()
+{
+    int n = 0;
+    int resultado = MaiorSecundaio(n);
+    cout << resultado << endl;
+    
+    return 0;
+}
