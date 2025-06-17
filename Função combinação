@@ -1,0 +1,43 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+int Fatorial(int x)
+{
+    int fat = 1;
+    for (int i = 1; i <= x; i++)
+    {
+        fat *= i;
+    }
+    return fat;
+}
+
+
+float Combinacao (int n, int r)
+{
+    float comb =0;
+    comb = ((float)Fatorial(n)) / ((float)Fatorial (n - r) * (float)Fatorial(r));
+    return comb;
+}
+
+
+int main()
+{
+    int r = 0, n = 0;
+    float resultado = 0;
+    
+    cout << "Entre com r e n:";
+    cin >> r >> n;
+    do{
+    if(r >= n) 
+    {
+        cout << "Resposta invalida. Declare outros numeros para r e n, respectivamente, lembrando que n > r: ";
+        cin >> r >> n;
+    }
+    } while (r >= n);
+    
+    resultado = Combinacao(n, r);
+    cout << "A combinacao eh igual a: "<< resultado;
+
+    return 0;
+}
