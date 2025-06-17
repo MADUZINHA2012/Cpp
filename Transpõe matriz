@@ -1,0 +1,50 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<vector<float>> TranspoeMatriz(vector<vector<float>> A)
+{
+    // Leitura dos dados da matriz A (50 x 90)
+    for (int i = 0; i < 50; i++)
+    {
+        for (int j = 0; j < 90; j++)
+        {
+            cout << "Insira um numero real A(" << i << ", " << j << "): ";
+            cin >> A[i][j];
+        }
+    }
+
+    // Criação da matriz transposta B (90 x 50)
+    vector<vector<float>> B(90, vector<float>(50));
+    for (int i = 0; i < 50; i++)
+    {
+        for (int j = 0; j < 90; j++)
+        {
+            B[j][i] = A[i][j];
+        }
+    }
+
+    return B;
+}
+
+int main()
+{
+    // Cria a matriz original
+    vector<vector<float>> M(50, vector<float>(90));
+
+    // Transpõe e armazena em T
+    vector<vector<float>> T = TranspoeMatriz(M);
+
+    // Imprime parte da transposta (opcional)
+    cout << "\nPrimeiros elementos da matriz transposta:\n";
+    for (int i = 0; i < 5; i++)  // 5 primeiras linhas
+    {
+        for (int j = 0; j < 5; j++)  // 5 primeiras colunas
+        {
+            cout << T[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
