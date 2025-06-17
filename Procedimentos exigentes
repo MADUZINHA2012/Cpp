@@ -1,0 +1,55 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+#include <string> 
+using namespace std;
+    // a
+    void DevolveVector (int &n, vector <float> &A, string nome) //o funcionario determina o tamanho do vetor e o preench; procetimento que retorna A
+    
+    {   
+        A.resize(n);
+        for (int i = 0; i < n; i++)
+        {
+            cout << nome << "(" << i << "): ";
+            cin >> A[i];
+        }
+        
+    }
+    // b
+    void LeVetor(int n, vector<float> &A, string nome)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            cout << nome << "(" << i << ")"<< A[i]<< endl;
+        }
+    }
+   
+int main()
+{
+  // c  
+  vector <float>A, B, C;
+  int nA = 3, nB = 2, nC = 4;
+ 
+ for (int i = 0; i < 3; i++)
+ {
+    if (i == 0)
+    {
+        DevolveVector(nA, A, "A");
+        LeVetor(nA,A,"A");
+        
+    }
+    if (i == 1) 
+    {
+        DevolveVector(nB, B, "B"); 
+        LeVetor(nB,B,"B");
+    }
+    
+    if (i == 2) 
+    {
+        DevolveVector(nC, C, "C"); 
+        LeVetor(nC,C,"C");
+    }
+ }
+  
+ return 0;
+}
