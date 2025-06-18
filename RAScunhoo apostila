@@ -1,0 +1,77 @@
+#include <cmath>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+void LeVector(int n, vector<float> V) //a
+{
+    cout << "Numero: ";
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    cout << "V(" << i <<"): ";
+    cin >> V[i];
+}
+
+void ImpVector(vector<float>V)
+{
+    LeVector(int n, vector<float>V);
+    for (int i = 0; i < V.size(); i++)
+    {
+        cout <<"V("<< i << "): " << V[i];
+    }
+}
+
+void (vector<float> V, vector <float> A, int &prodEscalar)
+{
+    if(V.size() != A.size())
+    {
+        cout<< "Os vetores devem ter o mesmo tamanho. Por favor declare novamente.";
+    }
+    
+    do ()
+    {
+             if(V.size() != A.size())
+        {
+            cout<< "Os vetores devem ter o mesmo tamanho. Por favor declare novamente.";
+            
+        }
+    } while(V.size != A.size())
+    
+    if (V.size() == A.size())
+    {
+        for (int i = 0; i < V.size(); i++)
+        {
+            prodEscalar += V[i]*A[i];
+        }
+    }
+}
+void SomaVector(vector<float>A, vector<float>M, vector <float> &soma)
+{
+    cout << "Declare os vetores sabendo que o tamanho deve ser iguais.";
+    LeVector(A);
+    LeVector(B);
+    for (int i = 0; i < A.size(); i++)
+    {
+        soma [i] = A[i] + M[i];
+    }
+
+    for(int i = 0; i < soma.size(); i++)
+    {
+        cout << soma[i]<< endl;
+    }
+}
+
+int main()
+{
+    vector <float> X, Y, Z, K;
+    LeVector(X);
+    LeVector(Y);
+    LeVector(Z);
+    LeVector(K);
+    SomaVector(X, Y);
+    SomaVector(K, Z);
+    
+   
+
+    return 0;
+}
