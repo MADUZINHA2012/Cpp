@@ -1,0 +1,43 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std; 
+//a
+void LeComplexo (float &parteReal, float &parteComplexo)
+{
+    cout << "Digite a e b, respectivamente: ";
+    cin >> parteReal >> parteComplexo;
+}
+void ImprimeComplexo(float parteReal, float parteComplexo)
+{
+    cout << endl << parteReal << " + "<< parteComplexo <<"i";
+}
+void somaComplexo(float a1, float a2, float b1, float b2, float &somaReal, float &somaImag)
+{
+   
+   somaReal = a1 + a2;
+   somaImag = b1 + b2;
+   ///cout << somaReal << " + "<< somaImag << "i"<< endl;
+}
+
+void MultiplicaComplexo(float a1, float b1, float a2, float b2, float &mult1, float &mult2, float &mult3, float &mult4)
+{
+    mult1 = a1 * a2;
+    mult2 = a1* b2;
+    mult3 = a2 * b1;
+    mult4 = -(b1 * b2);
+    
+    cout <<endl << mult1 << " + " << mult2<<"i" <<" + " << mult3<< "i" << " + "<< mult4;   
+}
+int main()
+{
+    float a1 = 0.0, a2 = 0, b1 = 0, b2 = 0, somaReal = 0, somaImag, m1, m2, m3,m4;
+   
+   LeComplexo(a1, b1);
+   LeComplexo(a2, b2);
+   somaComplexo (a1, a2, b1, b2, somaReal, somaImag);
+   ImprimeComplexo (somaReal, somaImag);
+   MultiplicaComplexo(a1, b1, a2, b2, m1, m2, m3, m4);
+
+    return 0;
+}
