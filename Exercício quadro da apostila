@@ -1,0 +1,111 @@
+#include <vector>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+// A: Verifica se um número é primo
+bool VerificaPrimo(int k)
+{
+    if (k < 2) return false;
+    for (int i = 2; i <= sqrt(k); i++)
+    {
+        if (k % i == 0) return false;
+    }
+    return true;
+}
+
+// B: Lê uma matriz quadrada e preenche o vetor passado por referência
+void LeMatriz(vector<vector<float>>& A, int nl, int nc)
+{
+    A.resize(nl, vector<float>(nc)); // redimensiona a matriz
+
+    for (int i = 0; i < nl; i++)
+    {
+        for (int j = 0; j < nc; j++)
+        {
+            cout << "A[" << i << "][" << j << "]: ";
+            cin >> A[i][j];
+        }
+    }
+}
+
+// C: Imprime uma matriz
+void ImpMatriz(const vector<vector<float>>& A)
+{
+    for (int i = 0; i < A.size(); i++)
+    {
+        for (int j = 0; j < A[i].size(); j++)
+        {
+            cout << A[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+// D: Conta os números primos acima da diagonal principal
+int PrimosAcimaDiagonal(const vector<vector<float>>& M)
+{
+    int conta = 0;
+    for (int i = 0; i < M.size(); i++)
+    {
+        for (int j = i + 1; j < M[i].size(); j++) // acima da diagonal: j > i
+        {
+            if (VerificaPrimo(M[i][j]))
+            {
+                conta++;
+            }
+        }
+    }
+    return conta;
+}
+
+// E: Função principal
+int main()
+{
+    int l1, l2, l3, l4;
+    vector<vector<float>> A1, A2, A3, A4;
+
+    cout << "Tamanho da primeira matriz quadrada: ";
+    cin >> l1;
+    LeMatriz(A1, l1, l1);
+
+    cout << "Tamanho da segunda matriz quadrada: ";
+    cin >> l2;
+    LeMatriz(A2, l2, l2);
+
+    cout << "Tamanho da terceira matriz quadrada: ";
+    cin >> l3;
+    LeMatriz(A3, l3, l3);
+
+    cout << "Tamanho da quarta matriz quadrada: ";
+    cin >> l4;
+    LeMatriz(A4, l4, l4);
+
+    cout << "\nMatrizes com 4 ou mais primos acima da diagonal:\n";
+
+    if (PrimosAcimaDiagonal(A1) >= 4)
+    {
+        cout << "Matriz A1:\n";
+        ImpMatriz(A1);
+    }
+
+    if (PrimosAcimaDiagonal(A2) >= 4)
+    {
+        cout << "Matriz A2:\n";
+        ImpMatriz(A2);
+    }
+
+    if (PrimosAcimaDiagonal(A3) >= 4)
+    {
+        cout << "Matriz A3:\n";
+        ImpMatriz(A3);
+    }
+
+    if (PrimosAcimaDiagonal(A4) >= 4)
+    {
+        cout << "Matriz A4:\n";
+        ImpMatriz(A4);
+    }
+
+    return 0;
+}
