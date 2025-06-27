@@ -1,0 +1,71 @@
+#include <vector>
+#include <cmath>
+#include <string>
+#include <iostream>
+using namespace std;
+
+int VerificaPrimo (int k)
+{
+    int conta = 0;
+    for (int i = 2; i < k; i++)
+    {
+        if (k % i == 0)
+        {
+            conta++;
+        }
+    }
+    if (conta >= 1)
+    return 0;
+    
+    else 
+    if((conta == 0) or (k == 2))
+    {
+        return 1;
+    }
+}
+
+
+vector<int> Fibonacci (int n)
+{
+    vector<int> F(n);
+    int a = 0, b = 1, soma = 0;
+    for (int i = 0; i < n; i++)
+    {
+        soma = a + b;
+        a = b;
+        b = soma;
+        F[i] = soma;
+    }
+    return F;
+}
+
+int Soma (vector <int> S)
+{
+    int soma = 0;
+    for (int i = 0; i < S.size(); i++)
+    {
+        soma += F[i];
+    }
+    return soma;
+    
+}
+
+int main()
+{
+   int n = 0;
+   cout << "Declare o tamanho do vetor: ";
+   cin >> n;
+   vector <int> P; 
+   vector <int> F(n);
+   
+   Fibonacci (n);
+   for (int i = 0; i < n; i++)
+   {
+       VerificaPrimo(F[i]);
+       if (VerificaPrimo(F[i]) == 1)
+       P.push_back(F[i]);
+   }
+   cout << Soma(P);
+   
+   
+    return 0;
